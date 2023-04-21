@@ -51,5 +51,4 @@ else
       --server https://$MASTER_NODE:6443 \
       --cluster-cidr="10.244.0.0/16 \
       --disable-cloud-controller
-
 fi
