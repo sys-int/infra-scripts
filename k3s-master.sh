@@ -14,13 +14,13 @@ while [ : ]; do
   case "$1" in
     -t | --k3s-token)
         K3S_TOKEN=$2
-        shift
+        shift 2
         ;;
     -f | --first-master)
         FIRST_MASTER=true
         shift
         ;;
-    -d | --master-node)
+    -n | --master-node)
         MASTER_NODE=$2
         shift 2
         ;;
