@@ -47,5 +47,9 @@ then
 			--tls-san="$(hostname -I | awk '{print $1}')" \
 			--flannel-iface=ens10
 else 
-  curl -sfL https://get.k3s.io | K3S_TOKEN=$K3S_TOKEN sh -s - server --server https://$MASTER_NODE:6443
+  curl -sfL https://get.k3s.io | K3S_TOKEN=$K3S_TOKEN sh -s - server \
+      --server https://$MASTER_NODE:6443 \
+      --cluster-cidr="10.244.0.0/16 \
+      --disable-cloud-controller
+
 fi
